@@ -546,7 +546,7 @@ function getPhotoList(){ //获取质量监控-照片列表
 							"c_num":0,
 							"code":"00595001084",
 							"deptCode":"0059500686",
-							"imgSrc":"/static/img/checkManage/people.png",
+							"imgSrc":"static/img/checkManage/people.png",
 							"name":"王俊",
 							"score":0.0,
 							"type":"2",
@@ -560,7 +560,7 @@ function getPhotoList(){ //获取质量监控-照片列表
 							"c_num":0,
 							"code":"00595001813",
 							"deptCode":"0059500686",
-							"imgSrc":"/static/img/checkManage/people.png",
+							"imgSrc":"static/img/checkManage/people.png",
 							"name":"费晶鑫",
 							"score":0.0,
 							"type":"2",
@@ -574,7 +574,7 @@ function getPhotoList(){ //获取质量监控-照片列表
 							"c_num":0,
 							"code":"00595000947",
 							"deptCode":"0059500686",
-							"imgSrc":"/static/img/checkManage/people.png",
+							"imgSrc":"static/img/checkManage/people.png",
 							"name":"陈正国",
 							"score":0.0,
 							"type":"2",
@@ -592,7 +592,7 @@ function getPhotoList(){ //获取质量监控-照片列表
 							"c_num":0,
 							"code":"00595000960",
 							"deptCode":"0059500686",
-							"imgSrc":"/static/img/checkManage/people.png",
+							"imgSrc":"static/img/checkManage/people.png",
 							"name":"薛忠",
 							"score":0.0,
 							"type":"2",
@@ -606,7 +606,7 @@ function getPhotoList(){ //获取质量监控-照片列表
 							"c_num":0,
 							"code":"00596005426",
 							"deptCode":"0059500686",
-							"imgSrc":"/static/img/checkManage/people.png",
+							"imgSrc":"static/img/checkManage/people.png",
 							"name":"杨平",
 							"score":0.0,
 							"type":"2",
@@ -620,7 +620,7 @@ function getPhotoList(){ //获取质量监控-照片列表
 							"c_num":0,
 							"code":"00596005465",
 							"deptCode":"0059500686",
-							"imgSrc":"/static/img/checkManage/people.png",
+							"imgSrc":"static/img/checkManage/people.png",
 							"name":"凌康",
 							"score":0.0,
 							"type":"2",
@@ -639,13 +639,13 @@ function getPhotoList(){ //获取质量监控-照片列表
 					let workImg;
 					let orWork;
 					if(item.type == '1'){ //工作中
-						workImg = '/static/img/checkManage/icon_work.png';
+						workImg = '/DP/static/img/checkManage/icon_work.png';
 						orWork = '工作中';
 					}else if(item.type == '2'){ //休整
-						workImg = '/static/img/checkManage/icon_relax.png';
+						workImg = '/DP/static/img/checkManage/icon_relax.png';
 						orWork = '休整';
 					}else{ //待作业
-						workImg = '/static/img/checkManage/icon_loadWork.png';
+						workImg = '/DP/static/img/checkManage/icon_loadWork.png';
 						orWork = '待作业';
 					}
 					obj += '<li class="photoEle" data-code="' + item.code + '">';

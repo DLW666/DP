@@ -17,7 +17,7 @@ div{
 	/* min-width: 3200px;
 	min-height: 1800px; */
 	padding: 0.625rem 1.2rem 1.2rem 1.2rem;
-	background: url(/static/img/checkManage/page_bg.png) no-repeat;
+	background: url(/DP/static/img/checkManage/page_bg.png) no-repeat;
 	background-size: 100% 100%;
 	position: relative;
 	color: #fff;
@@ -29,7 +29,7 @@ div{
 .topBox{
 	height: 9.2%;
 	margin-bottom: 1.8rem;
-	background: url(/static/img/checkManage/tab.png) no-repeat;
+	background: url(/DP/static/img/checkManage/tab.png) no-repeat;
 	background-size: 100% 100%;
 	color: #5cc5ff;
 }
@@ -78,14 +78,14 @@ div{
 	float: left;
 	width: 72%;
 	height: 100%;
-	background: url(/static/img/checkManage/zljk_bg.png) no-repeat;
+	background: url(/DP/static/img/checkManage/zljk_bg.png) no-repeat;
 	background-size: 100% 100%;
 }
 .centerBox_commBox{
 	float: right;
 	width: calc(28% - 1.125rem);
 	height: 100%;
-	background: url(/static/img/checkManage/zlpj_bg.png) no-repeat;
+	background: url(/DP/static/img/checkManage/zlpj_bg.png) no-repeat;
 	background-size: 100% 100%;
 }
 .comm_EchartBox{
@@ -468,14 +468,14 @@ div{
 .basisWorkBox{
 	width: 33.7%;
 	height: 100%;
-	background: url(/static/img/checkManage/jczy_bg.png) no-repeat;
+	background: url(/DP/static/img/checkManage/jczy_bg.png) no-repeat;
 	background-size: 100% 100%;
 	cursor: pointer;
 }
 .mainListBox , .reworkBox , .qualityBox{
 	width: calc((66.3% - 2.25rem) / 3);
 	height: 100%;
-	background: url(/static/img/checkManage/zljd_bg.png) no-repeat;
+	background: url(/DP/static/img/checkManage/zljd_bg.png) no-repeat;
 	background-size: 100% 100%;
 }
 
@@ -624,7 +624,7 @@ div{
     font-weight: 700;
     height: 60px;
     color: #5cc5ff;
-	background: url(/static/img/checkManage/popTitle_bg.png) no-repeat;
+	background: url(/DP/static/img/checkManage/popTitle_bg.png) no-repeat;
 	background-size: 100% 100%;
 	position: relative;
 }
@@ -691,7 +691,7 @@ div{
 	overflow: hidden;
 	box-shadow: 0px 0 10px #16398d;
 	position: absolute;
-	background: url(/static/img/menu_bg.png) no-repeat;
+	background: url(/DP/static/img/menu_bg.png) no-repeat;
 	background-size: 100%;
 	padding: 20px 0;
 	color: #68b8db;
@@ -731,13 +731,13 @@ div{
 
 .menu_thisShow{
 	height: 50px;
-	background: url(/static/img/menu_kuai2.png) no-repeat;
+	background: url(/DP/static/img/menu_kuai2.png) no-repeat;
 	background-size: 100%;
 	padding: 8px;
 }
 .menu_people,.menu_project{
 	height: 108px;
-	background: url(/static/img/menu_kuai.png) no-repeat;
+	background: url(/DP/static/img/menu_kuai.png) no-repeat;
 	background-size: 100%;
 	padding: 20px;
 }
@@ -768,7 +768,7 @@ div{
 	width: 210px;
 	height: 26px;
 	margin: auto;
-	background: url(/static/img/menu_input.png) no-repeat;
+	background: url(/DP/static/img/menu_input.png) no-repeat;
 	background-size: 100%;
 }
 .menu_inputBox input , .menu_thisShow .menu_select{
@@ -783,7 +783,7 @@ div{
     height: 48%;
 }
 #reworkNumPop .popContentTit{
-	background: url(/static/img/checkManage/popTitle_bg_sm.png) no-repeat;
+	background: url(/DP/static/img/checkManage/popTitle_bg_sm.png) no-repeat;
 }
 #reworkNumPop .popCloseBtn{
 	right: 25px;
