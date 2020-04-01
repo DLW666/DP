@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>质检工作日志</title>
+
+    <!-- Bootstrap样式 -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 公共色调样式 -->
+	<link href="/static/css/myStyle/pubStyle.css" rel="stylesheet">
+	<!-- 页面样式 -->
+	<link href="/static/css/myStyle/workLogSelect/index.css" rel="stylesheet">
+
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+	<script src='/static/bootstrap/js/jquery.min.js'></script>
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<script src='/static/bootstrap/js/bootstrap.min.js'></script>
+	<!-- bootstrap-table插件 -->
+	<script src='/static/bootstrap/js/bootstrap-table.js'></script>
+	<script src='/static/bootstrap/js/bootstrap-table-zh-CN.js'></script>
+	<!-- <link href='/static/bootstrap/css/fresh-bootstrap-table.css' rel="stylesheet"/> -->
+	
+	<!-- 日期控件 -->
+	<script src='/static/bootstrap/js/bootstrap-datetimepicker.js'></script>
+	<script src='/static/bootstrap/js/bootstrap-datetimepicker.zh-CN.js'></script>
+	<link href="/static/bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet">
+	
+	<script src='/static/layer/layer.js'></script>
+	<script src='/static/js/myJs/common.js'></script>
+	
+	<script src="/static/js/myJs/resize.js"></script>
+	<script src="/static/js/myJs/request.js"></script>
+	<script src='/static/js/myJs/toExcel.js'></script>
+	
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="/static/bootstrap/js/html5shiv.min.js"></script>
+      <script src="/static/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+	<div class="container">
+		
+		<form role="form" class="topForm">
+			<ul>
+				<li class="timeLi">
+					<label>日 期：</label>
+					<div class="input-group date form_date" id="dateTime">
+						<input class="form-control" name="entryDate" placeholder="请选择时间" type="text" readonly>
+						<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</li>
+				<li class="showTypeLi">
+					<label>显示类型：</label>
+					<select class="form-control" id="showTypeId">
+						<option value="0">车组号</option>
+						<option value="1">数量</option>
+					</select>
+				</li>
+				<li class="btnLi">
+					<button type="button" class="btn pub-btn-solid-298df8" id="selectBtn">查询</button>
+					<button type="button" class="btn pub-btn-hollow-298df8" id="resetBtn">重置</button>
+					<button type="button" class="btn pub-btn-solid-298df8" id="submitBtn">提交</button>
+					<button type="button" class="btn pub-btn-hollow-298df8" id="exportBtn">导出</button>
+					<button type="button" class="btn pub-btn-solid-61d08d" id="saveBtn">保存</button>
+				</li>
+			</ul>
+		</form>
+		
+		<div class="tableBox">
+			<table id="tableId"></table>
+		</div>
+		
+	</div>
+	
+	<script src="/static/js/myJs/workLogSelect/index.js"></script>
+
+  </body>
+</html>

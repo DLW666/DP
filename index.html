@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>质检作业管理平台</title>
+
+	<!-- Bootstrap样式 -->
+	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 公共色调样式 -->
+	<link href="/static/css/myStyle/pubStyle.css" rel="stylesheet">
+	<!-- 页面样式 -->
+	<link href="/static/css/myResourcesStyle/localWorks/checkManage/new_index.css" rel="stylesheet">
+	
+	<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+	<script src='/static/bootstrap/js/jquery.min.js'></script>
+	<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+	<script src='/static/bootstrap/js/bootstrap.min.js'></script>
+	
+	<script src='/static/echarts/echarts.js'></script>
+	
+	<script src="/static/js/myJs/request.js"></script>
+	
+	<script src='/static/layer/layer.js'></script>
+	<script src='/static/js/myJs/common.js'></script>
+	
+	<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+	<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+	<!--[if lt IE 9]>
+	  <script src="/static/bootstrap/js/html5shiv.min.js"></script>
+	  <script src="/static/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="/static/swiper-5.0.4/swiper.min.css">
+	<script src="/static/swiper-5.0.4/swiper.min.js"></script>
+</head>
+<body>
+	
+	<div class="pageBox" id="pageBox">
+		<div class="topBox">
+			<div class="topBox_title">南京动车段质量管理监控平台</div>
+			<div class="topBox_date" id="topBox_date"></div>
+			<div class="topBox_time" id="topBox_time"></div>
+		</div>
+		<div class="centerBox">
+			<div class="centerBox_checkBox smallBox">
+				<p class="smallTitle">质量监控</p>
+				<div class="check_contentBox">
+					<div class="check_topContent">
+						<div class="photoBox swiper-container" id="photoBox">
+							<div class="swiper-wrapper">
+							</div>
+						</div>
+						<div class="photoDataBox smallEle_bgColor smallEle_dashed">
+							<div class="photoData_nameBox">
+								<p class="photoData_nameBox_nameTit">
+									<span id="photoName"></span>
+									<span class="nameTit_scoreEle">
+										<span id="photoScore"></span>
+										<span class="smallScore">分</span>
+									</span>
+								</p>
+								<ul class="photoData_nameBox_group">
+									<li>
+										运用所：<span id="photoUnit"></span>
+									</li>
+									<li>
+										质检组：<span id="photoGroup"></span>
+									</li>
+								</ul>
+								<ul class="photoData_nameBox_ABC">
+									<li>
+										<span>A</span>类返工返修单数量：<span id="photoNumA" data-sfaultlevel='A'></span>
+									</li>
+									<li>
+										<span>B</span>类返工返修单数量：<span id="photoNumB" data-sfaultlevel='B'></span>
+									</li>
+									<li>
+										<span>C</span>类返工返修单数量：<span id="photoNumC" data-sfaultlevel='C'></span>
+									</li>
+								</ul>
+							</div>
+							<div class="photoData_dataBox">
+								<div class="photoStatistics" id="photoStatistics"></div>
+								<div class="photoStatistics_top"></div>
+								<div class="photoStatistics_left1"></div>
+								<div class="photoStatistics_left2"></div>
+								<div class="photoStatistics_right1"></div>
+								<div class="photoStatistics_right2"></div>
+							</div>
+						</div>
+						<div class="statisticsBox smallEle_bgColor smallEle_dashed">
+							<p class="bgTitle">用户统计</p>
+							<div class="statistics_contentBox" id="statistics_contentBox">
+								<div class="userStatisticsEle" id="userStatisticsEle"></div>
+								<div class="userStatistics_allScoreBox">
+									<span class="allScore"></span>
+									总分
+								</div>
+								<div class="userStatisticsList swiper-container">
+									<ul class="swiper-wrapper" id="userStatisticsList"></ul>
+								</div>
+							</div>
+						</div>
+						<div class="clearBoth"></div>
+					</div>
+					<div class="check_botContent">
+						<div class="check_botContent_tableList smallEle_dashed">
+							<p class="bgTitle">当前月<span id="reworkListName"></span>返工返修单</p>
+							<ul class="check_botContent_table check_botContent_tableHead">
+								<li>
+									<div><span>车组号</span></div>
+									<div><span>班次</span></div>
+									<div><span>状态</span></div>
+									<div><span>处理人</span></div>
+									<div><span>存在问题</span></div>
+								</li>
+							</ul>
+							<div class="check_botContent_tableEleBox swiper-container">
+								<ul class="check_botContent_table check_botContent_tableEle swiper-wrapper"></ul>
+							</div>
+						</div>
+						<div class="check_botContent_threeList" id="threeList">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="centerBox_commBox smallBox">
+				<p class="smallTitle">质量评价</p>
+				<div class="comm_EchartBox">
+					<div class="comm_topEchart" id="comm_topEchart"></div>
+					<div class="comm_botEchart" id="comm_botEchart"></div>
+				</div>
+			</div>
+			<div class="clearBoth"></div>
+		</div>
+		<div class="bottomBox">
+			<div class="basisWorkBox smallBox" id="basisWorkBox">
+				<p class="smallTitle">基础作业</p>
+				<div class="basisWork_tableBox">
+					<table class="basisWork_table" id="basisWork_table"></table>
+				</div>
+			</div>
+			<div class="mainListBox smallBox">
+				<p class="smallTitle">关键作业跟踪</p>
+				<div class="mainList_ulBox">
+					<ul id="mainList"></ul>
+				</div>
+			</div>
+			<div class="reworkBox">
+				<p class="smallTitle" id="reworkStatistics">返工返修</p>
+				<div class="rework_contentBox">
+					<div class="rework_faultStatisticsBox">
+						<div class="rework_faultStatisticsEle" id="rework_faultStatisticsEle"></div>
+						<div class="faultStatistics_allScoreBox">
+							<span class="allScore"></span>
+							故障总数
+						</div>
+						<div class="faultStatistics_legendBox swiper-container"></div>
+					</div>
+					<div class="rework_classStatisticsBox">
+						<div class="rework_unitStatisticsEle" id="rework_unitStatisticsEle"></div>
+					</div>
+				</div>
+			</div>
+			<div class="qualityBox">
+				<p class="smallTitle" id="qualityStatistics">质量鉴定</p>
+				<div class="quality_contentBox">
+					<div class="quality_faultStatisticsBox">
+						<div class="quality_faultStatisticsEle" id="quality_faultStatisticsEle"></div>
+						<div class="faultStatistics_allScoreBox">
+							<span class="allScore"></span>
+							故障总数
+						</div>
+						<div class="faultStatistics_legendBox swiper-container"></div>
+					</div>
+					<div class="quality_trainStatisticsBox">
+						<div class="quality_unitStatisticsEle" id="quality_unitStatisticsEle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 返修单数量弹窗 -->
+		<div class="popElement" id="reworkNumPop">
+			<div class="popContentBox">
+				<div class="popContentTit pub-background-color-298df8 pub-color-fff">
+					<span>返修单数量</span>
+					<span class="popCloseBtn" id="closeReworkNumPop"></span>
+				</div>
+				<div class="popContentArt" id="peoGroupDetailPopContentList_listBox">
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- 基础作业弹窗 -->
+		<div class="popElement" id="basisWorkPop">
+			<div class="popContentBox">
+				<div class="popContentTit pub-background-color-298df8 pub-color-fff">
+					<span>基础作业</span>
+					<span class="popCloseBtn" id="closeBasisWorkPop"></span>
+				</div>
+				<div class="popContentArt">
+					<!-- <iframe src="/static/js/myResourcesJs/localWorks/checkManage/workLogSelect.html" frameborder="0" scrolling="no" name="" height="100%" width="100%" id="basisWorkIframe"></iframe> -->
+				</div>
+			</div>
+		</div>
+		
+		<!-- 返工返修、质量鉴定 弹窗 -->
+		<div class="popElement" id="statisticsPop">
+			<div class="popContentBox">
+				<div class="popContentTit pub-background-color-298df8 pub-color-fff">
+					<span id="detailTit"></span>
+					<span class="popCloseBtn" id="closeStatisticsPop"></span>
+				</div>
+				<div class="popContentArt">
+					<table class="detailTable detailTable_head" id="detailTable_head"></table>
+					<table class="detailTable" id="detailTable"></table>
+				</div>
+				<p id="detailTotal"></p>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!-- 页面配置自定义菜单 -->
+	<div id="menu">
+		<div class="menu_thisShow">
+			<select class="form-control menu_select" id="menu_select"></select>
+		</div>
+		<div class="menu_people">
+			<div class="tit_pause">
+				<p>职工轮播间隔（S）：</p>
+				<div class="menu_btn" id="menu_stop">暂停</div>
+			</div>
+			<div class="menu_inputBox">
+				<input class="menuInp" value="" id="menu_timeInp" oninput="value=value.replace(/[^\d]/g,'')" placeholder="" />
+			</div>
+		</div>
+		<div class="menu_project">
+			<div class="tit_pause">
+				<p>统计轮播间隔（S）：</p>
+				<div class="menu_btn" id="menu_stop2">暂停</div>
+			</div>
+			<div class="menu_inputBox">
+				<input class="menuInp" value="" id="menu_timeInp2" oninput="value=value.replace(/[^\d]/g,'')" placeholder="" />
+			</div>
+		</div>
+		<div class="menuBtn">
+			<div class="menu_btn" id="menuSure">确定</div>
+			<div class="menu_btn" id="menuClose">取消</div>
+		</div>
+	</div>
+	
+	<script src='/static/js/myResourcesJs/localWorks/checkManage/new_index.js'></script>
+	
+</body>
+</html>

@@ -1,0 +1,351 @@
+/* 公共样式 */
+html{
+	font-size: 9.34px !important;
+}
+body{
+	font-size: 9.34px !important;
+	margin: 0;
+	padding: 0;
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+}
+a,a:link,a:visited,a:hover,a:active{
+	text-decoration: none !important;
+	color: #000;
+	cursor: inherit;
+}
+p{
+	margin: 0;
+}
+input[readonly]{
+    background-color: #fff !important;
+}
+.input-group-addon{
+	background-color: #fff !important;
+}
+.clearBoth{
+	clear: both;
+}
+.container{
+	background-color: rgb(242, 242, 242);
+	width:100%;
+	height: 100vh;
+	padding: 0;
+	position: relative;
+}
+.topForm{
+	background-color: #fff;
+	padding: 0 25px;
+	margin-bottom: 4px;
+}
+.tableBox{
+	background-color: #fff;
+	padding: 20px 25px 10px 25px;
+	margin-bottom: 0;
+	position: relative;
+	font-size: 1.5rem;
+}
+.fixed-table-pagination{ /* bootstrap-table分页样式重写 */
+	margin-top: 2%;
+}
+.pagination{ /* bootstrap-table分页样式重写 */
+	margin: 0;
+}
+/*重写bootstrap-select样式,去除选择框的outline*/
+/* .bootstrap-select .dropdown-toggle:focus{ 
+	outline:none !important;
+} */
+.form-control:focus { /* 重写bootstrap的input样式,去除box-shadow */
+	box-shadow: none;
+}
+/* bootstrap-treeview插件展开收起隐藏样式没有,自己写 */
+/* .node-hidden{ 
+	display: none;
+}
+ */
+.loadingAnimation{ /* 自定义加载中动画 */
+	width: 100%;
+    height: 100%;
+    background-color: rgba(242, 242, 242,0.8);
+    position: relative;
+}
+.loadingAnimation img{ /* 自定义加载中动画 */
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* 公共色调 */
+.dropdown-menu>li>a:focus{ /* bootstrap-select插件的option的outline颜色蓝 */
+	outline: 5px auto #298df8;
+    outline-offset: -2px;
+}
+.pub-background-color-298df8{ /* 背景蓝 */
+	background-color: #298df8;
+}
+.pub-background-color-f4fafe{ /* 背景浅蓝 */
+	background-color: #f4fafe !important;
+}
+
+/* 背景白、hover、focus、active背景白 */
+.pub-background-color-fff,
+.pub-hover-background-color-fff:hover,
+.pub-active-background-color-fff:active,
+.pub-focus-background-color-fff:focus{ 
+	background-color: #fff;
+}
+
+.pub-background-color-transparent{ /* 背景透明 */
+	background-color: transparent;
+}
+.pub-background-color-d4464b{ /* 背景红 */
+	background-color: #d4464b;
+}
+.pub-background-color-21b05a{ /* 背景绿 */
+	background-color: #21b05a;
+}
+
+/* 字体白、hover、focus、active字体白 */
+.pub-color-fff,
+.pub-hoverColor-fff:hover,
+.pub-focusColor-fff:focus,
+.pub-activeColor-fff:active{ 
+	color: #fff;
+}
+/* 字体篮、hover、focus、active字体蓝 */
+.pub-color-298df8,
+.pub-hoverColor-298df8:hover,
+.pub-focusColor-298df8:focus,
+.pub-activeColor-298df8:active{ 
+	color: #298df8;
+}
+/* 字体灰、hover、focus、active字体灰 */
+.pub-color-919ca1,
+.pub-hoverColor-919ca1:hover,
+.pub-focusColor-919ca1:focus,
+.pub-activeColor-919ca1:active{ 
+	color: #919ca1;
+}
+
+.pub-color-d4464b{ /* 字体红 */
+	color: #d4464b;
+}
+.pub-color-21b05a{ /* 字体绿 */
+	color: #21b05a;
+}
+
+.pub-border-color-298df8{ /* 边框蓝 */
+	border-color: #298df8;
+}
+.pub-border-color-d4464b{ /* 边框红 */
+	border-color: #d4464b;
+}
+.pub-border-color-21b05a{ /* 边框绿 */
+	border-color: #21b05a;
+}
+.pub-border-color-000{ /* 边框黑 */
+	border-color: #000;
+}
+
+
+.pub-background-color-000{ /* 气泡封装-字体黑、颜色白、阴影-右下阴影 */
+	color: #000 !important;
+	background-color: #fff;
+	box-shadow: 10px 10px 5px #cccccc;
+    border: 1px solid #dddddd;
+	max-height: 150px;
+	max-width: 300px;
+	min-width: 100px;
+    overflow: auto;
+	word-wrap: break-word;
+    word-break: break-all;
+}
+.pub-border-right-color-000,.pub-border-left-color-000{ /* 气泡小三角颜色 */
+	border-right-color: #dddddd !important;
+	border-left-color: #dddddd !important;
+}
+.triangle_left{ /* 气泡小三角-尖头左 */
+	content: '';
+    width: 2%;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 40%;
+    right: 100%;
+}
+.triangle_right{ /* 气泡小三角-尖头右 */
+	content: '';
+    width: 2%;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 10px solid;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 40%;
+    left: 100%;
+}
+
+.table-pub thead{ /* 表头的浅蓝 */
+	background-color: #f4fafe;
+}
+
+
+/* 重写table分页列表颜色-蓝 */
+.pagination>.active>a,
+.pagination>.active>a:hover{ 
+	background-color: #298df8;
+	border-color: #298df8;
+}
+/* 重写table分页pagesize选择列表-蓝 */
+.dropdown-menu>.active>a,
+menu>.active>a:hover{ 
+	background-color: #298df8;
+}
+
+/* 一级修配置启用禁用-背景白,字体、边框蓝 */
+.pub-radio-hollow-298df8,
+.pub-radio-hollow-298df8:hover,
+.pub-radio-hollow-298df8:focus,
+.pub-radio-hollow-298df8:active{ 
+	color: #298df8;
+    border-color: #298df8;
+    background-color: #fff;
+	font-size: 1.5rem;
+}
+/* 一级修配置启用禁用-字体白,背景、边框蓝 */
+.pub-radio-solid-298df8,
+.pub-radio-solid-298df8:hover,
+.pub-radio-solid-298df8:focus,
+.pub-radio-solid-298df8:active{ 
+	color: #fff;
+    border-color: #298df8;
+    background-color: #298df8;
+	font-size: 1.5rem;
+}
+
+/* 封装按钮样式-背景白,字体、边框蓝 => 改 字体白,背景、边框蓝 */
+.pub-btn-hollow-298df8,
+.pub-btn-hollow-298df8:hover,
+.pub-btn-hollow-298df8:focus,
+.pub-btn-hollow-298df8:active{ 
+	color: #fff;
+	border-color: #298df8;
+	background-color: #298df8;
+	font-size: 1.5rem;
+}
+/* 封装按钮样式-字体白,背景、边框蓝 */
+.pub-btn-solid-298df8,
+.pub-btn-solid-298df8:hover,
+.pub-btn-solid-298df8:focus,
+.pub-btn-solid-298df8:active{ 
+	color: #fff;
+    border-color: #298df8;
+    background-color: #298df8;
+	font-size: 1.5rem;
+}
+
+/* 封装按钮样式-背景白,字体、边框绿 => 改 字体白,背景、边框蓝 */
+.pub-btn-hollow-61d08d,
+.pub-btn-hollow-61d08d:hover,
+.pub-btn-hollow-61d08d:focus,
+.pub-btn-hollow-61d08d:active{
+	color: #fff;
+	border-color: #298df8;
+	background-color: #298df8;
+	font-size: 1.5rem;
+}
+/* 封装按钮样式-字体白,背景、边框绿 => 改 字体白,背景、边框蓝 */
+.pub-btn-solid-61d08d,
+.pub-btn-solid-61d08d:hover,
+.pub-btn-solid-61d08d:focus,
+.pub-btn-solid-61d08d:active{ 
+	color: #fff;
+	border-color: #298df8;
+	background-color: #298df8;
+	font-size: 1.5rem;
+}
+/* 封装按钮样式-字体蓝,背景透明,无边框 */
+.pub-btn-none-298df8,
+.pub-btn-none-298df8:hover,
+.pub-btn-none-298df8:focus,
+.pub-btn-none-298df8:active{
+	color: #298df8;
+    border: none;
+    background-color: transparent;
+	font-size: 1.5rem;
+}
+/* 封装按钮样式-字体灰,背景透明,无边框 */
+.pub-btn-none-919ca1,
+.pub-btn-none-919ca1:hover,
+.pub-btn-none-919ca1:focus,
+.pub-btn-none-919ca1:active{
+	color: #919ca1;
+    border: none;
+    background-color: transparent;
+	font-size: 1.5rem;
+}
+
+/* 选中样式(√) */ /* 背景蓝字体白 */
+/* .glyphicon-ok{ 
+	background-color: #298df8;
+	color: #fff;
+} */
+
+.pub-background-color-f4fafe{ /* 背景浅蓝 */
+	background-color: #f4fafe;
+}
+
+
+.popElement{ /* 弹窗遮罩层 */
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 3;
+}
+
+.layui-layer-molv .layui-layer-title{ /* layer提示框颜色 */
+	background: #298df8 !important;
+    color: #fff !important;
+	border: none !important;
+}
+.layui-layer-molv .layui-layer-btn a { /* layer提示框颜色 */
+    background: #298df8 !important;
+    border-color: #298df8 !important;
+}
+
+.table tr th , .table tr td{
+	vertical-align: middle !important;
+	text-align: center;
+}
+
+.tableHead_fixed{ /* 表格固定表头的class */
+	position: absolute;
+	z-index: 2;
+	width: calc(100% - 50px);
+}
+
+.tableBox .fixed-table-loading{ /* bootstrap-table的loading */
+	display: none !important;
+}
+
+.layui-layer-setwin .layui-layer-close1{ /* layer提示框的× */
+	/* background-position: -186px -38px !important; */
+}
+
+.table-bordered>thead>tr>th{ /* bootstrap-table的th */
+	border-bottom-width: 1px;
+}
+
+.btn[disabled]{ /* 按钮禁用字体颜色 */
+	color: #919ca1; /* 灰 */
+}
